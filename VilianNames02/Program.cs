@@ -19,7 +19,7 @@ namespace VilianNames02
                                     FROM Villains AS v 
                                     JOIN MinionsVillains AS mv ON v.Id = mv.VillainId 
                                     GROUP BY v.Id, v.Name 
-                                    HAVING COUNT(mv.VillainId) > 3 
+                                    HAVING COUNT(mv.VillainId) > 2 
                                     ORDER BY COUNT(mv.VillainId)";
 
                 SqlCommand cmd = new SqlCommand(sqlText, connection);

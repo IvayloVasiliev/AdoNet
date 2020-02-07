@@ -17,9 +17,26 @@ namespace MinionNames03
 
             using (connection)
             {
-                string sqlText = @"SELECT Name FROM Villains WHERE Id = @Id
 
-                                   SELECT ROW_NUMBER() OVER (ORDER BY m.Name) as RowNum,
+                string villianNameQuery = @"SELECT Name FROM Villains WHERE Id = @Id";
+
+                using (SqlCommand command = new SqlCommand(villianNameQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    string villianName = (string)command.ExecuteScalar();
+
+                    if (villianName == null)
+                    {
+                        Console.WriteLine($"No villain with ID {id} exists in the database.");
+                        return;
+                    }
+
+                    Console.WriteLine($"Villian: {villianName}");
+                }
+
+                
+
+                string minionsQuery = @"SELECT ROW_NUMBER() OVER (ORDER BY m.Name) as RowNum,
                                          m.Name, 
                                          m.Age
                                     FROM MinionsVillains AS mv
@@ -27,25 +44,31 @@ namespace MinionNames03
                                    WHERE mv.VillainId = @Id
                                 ORDER BY m.Name";
 
-                SqlCommand cmd = new SqlCommand(sqlText, connection);
-                cmd.Parameters.AddWithValue("@Id", id);
+                
 
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                using (reader)
+                using (SqlCommand command = new SqlCommand(minionsQuery, connection))
                 {
-                    while (reader.Read())
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        Console.WriteLine($"Villian: {reader["Name"]}");
-                        Console.WriteLine($"{reader["m.Name"]} {reader["m.Age"]}");
+                        while (reader.Read())
+                        {
+                            //long rowNumber = (long)reader[0];
+                            //string name = (string)reader[1];
+                            int age = (int)reader[2];
+
+                            Console.WriteLine($"{reader[0]}. {reader["Name"]} {age}");
+                        }
+
+                        if (!reader.HasRows)
+                        {
+                            Console.WriteLine("(no minions )");
+                        }
                     }
                 }
 
             }
-
-
-
-
         }
     }
 }
