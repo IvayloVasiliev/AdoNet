@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoNetTest", "AdoNetTest\AdoNetTest.csproj", "{2D1C3537-14D3-4A28-8EC7-E19E977AE9FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdoNetTest", "AdoNetTest\AdoNetTest.csproj", "{2D1C3537-14D3-4A28-8EC7-E19E977AE9FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VilianNames02", "VilianNames02\VilianNames02.csproj", "{750AA11C-CB74-46F9-8728-EDB01ADD0EE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VilianNames02", "VilianNames02\VilianNames02.csproj", "{750AA11C-CB74-46F9-8728-EDB01ADD0EE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveVillian06", "RemoveVillian06\RemoveVillian06.csproj", "{FE8FFB6F-90C6-42AA-A7C6-E13C7D82AC50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveVillian06", "RemoveVillian06\RemoveVillian06.csproj", "{FE8FFB6F-90C6-42AA-A7C6-E13C7D82AC50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinionNames03", "MinionNames03\MinionNames03.csproj", "{CE165F9F-7696-4B9C-958F-AF41A53AB731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinionNames03", "MinionNames03\MinionNames03.csproj", "{CE165F9F-7696-4B9C-958F-AF41A53AB731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddMinion04", "AddMinion04\AddMinion04.csproj", "{E96B294B-879B-4B91-BCBB-8221DF748BDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CE165F9F-7696-4B9C-958F-AF41A53AB731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE165F9F-7696-4B9C-958F-AF41A53AB731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE165F9F-7696-4B9C-958F-AF41A53AB731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96B294B-879B-4B91-BCBB-8221DF748BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96B294B-879B-4B91-BCBB-8221DF748BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96B294B-879B-4B91-BCBB-8221DF748BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96B294B-879B-4B91-BCBB-8221DF748BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
