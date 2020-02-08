@@ -14,10 +14,12 @@ namespace ChangeTownNamesCasing05
         {
             string country = Console.ReadLine();
 
-            connection.Open();
+
 
             using (connection)
             {
+                connection.Open();
+
                 string updateTownNames = @"UPDATE Towns
                        SET Name = UPPER(Name)
                        WHERE CountryCode = (SELECT c.Id FROM Countries AS c WHERE c.Name = @countryName)";
